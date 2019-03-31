@@ -1,5 +1,13 @@
+
+    
 .App {
   text-align: center;
+  background-image: url("https://media.giphy.com/media/xTiTni5EJQY4QftE7C/giphy.gif"); 
+
+background-repeat: no-repeat;
+background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -30,4 +38,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+.mainStyles {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-items: stretch;
+align-content: stretch;
+height: 95vh;
+overflow-y: scroll;
 }

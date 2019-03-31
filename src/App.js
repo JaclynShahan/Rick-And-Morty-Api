@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Axios from 'axios';
+import CharacterSearch from './components/characterSearch/characterSearch.js';
 
 class App extends Component {
   test = () => {
@@ -12,7 +13,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <button onClick={() => this.test()}>CLICK ME</button>
+
+     <CharacterSearch  />
+        
       </div>
     );
   }
