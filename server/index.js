@@ -15,7 +15,7 @@ app.get('/api/test', (req, res) => {
 })
 
 app.get('/api/characterSearch', (req, res) => {
-   console.log(req.query)
+   console.log(req.query) // console log the req.query object
    axios.get(`https://rickandmortyapi.com/api/character?name=${req.query.name}`)
    .then((resp) => {
        console.log(resp.data)
@@ -24,9 +24,17 @@ app.get('/api/characterSearch', (req, res) => {
 })
 
 app.post(`/api/addFavorite`, (req, res) => {
-    console.log(req.body)
-    favorites.push(req.body.person)
-    res.status(200).send(favorites)
+    console.log(req.body) // console log the body sent in the request
+    favorites.push(req.body.person) // push the new person in the body object into the array
+    res.status(200).send(favorites) // send back the mmodified array
+})
+
+app.delete(`/api/deleteFavorite/:id`, (req, res) => { // we define ID as a parameter here
+    console.log(req.params) // consolelog the req.params object
+    // const {id} = req.params // destructuring id from req.params
+    // const id = req.params.id // assigning an id variable the full path
+    favorites.splice(req.params.id, 1) // splice out the index using the full nested value
+    res.status(200).send(favorites) // now send back modified favorites array
 })
 
 const port = 3002;

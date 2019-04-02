@@ -8,7 +8,7 @@ class CharacterSearch extends Component {
         this.state = {
             searchString: '',
             results: [],
-            favorites: []
+            favorites: [],
         }
     }
     onSearch = (e) => {
@@ -31,6 +31,11 @@ class CharacterSearch extends Component {
         })
     }
 
+    onDelete = (i) => {
+        Axios.delete(`/api/deleteFavorite/${i}`).then((resp) => {console.log(resp)
+        this.setState({favorites: resp.data})
+        })
+    }
 
     render() {
         console.log(this.state)
@@ -46,7 +51,7 @@ class CharacterSearch extends Component {
             right: "0",
 
         }
-    
+
         return(
             <div className='App'>
             <div>
@@ -67,13 +72,13 @@ class CharacterSearch extends Component {
                 } ) }
                 </div>
                 <div>
-                {this.state.favorites.map((e) => {
+                {this.state.favorites.map((e, i) => {
                     return ( <div style={styles} key={e.id}>
+                        <img style={heartStyles} src={'https://i.ebayimg.com/images/g/xwgAAOSwTRBZ0ReG/s-l1600.jpg'} onClick={() => this.onDelete(i)} />
                         <p>Name:{e.name}</p>
                         <p>Status:{e.status}</p>
                         <p>Species:{e.species}</p>
                         <img src={e.image} /> 
-
                     </div>)
                 })}
                 </div>
