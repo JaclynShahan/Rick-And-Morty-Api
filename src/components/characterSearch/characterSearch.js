@@ -34,6 +34,7 @@ class CharacterSearch extends Component {
     onDelete = (i) => {
         Axios.delete(`/api/deleteFavorite/${i}`).then((resp) => {console.log(resp)
         this.setState({favorites: resp.data})
+        alert('Are you sure!?')
         })
     }
 
@@ -51,6 +52,7 @@ class CharacterSearch extends Component {
             right: "0",
 
         }
+    
 
         return(
             <div className='App'>
@@ -61,6 +63,7 @@ class CharacterSearch extends Component {
             <div className='mainStyles'>
              
                 <div>
+                    <h1 className='headers'>Character:</h1>
                  {this.state.results.map((e) => {
                      return  ( <div style={styles} key={e.id} onClick={() => this.addFavorite(e)}>
                         <img style={heartStyles} src={'http://www.milopowellpi.com/bmz_cache/1/161c899edbc3830b47f5aa7ac346d1b6.image.300x300.jpg'}/>
@@ -72,6 +75,7 @@ class CharacterSearch extends Component {
                 } ) }
                 </div>
                 <div>
+                    <h1 className='headers'>Favorites:</h1>
                 {this.state.favorites.map((e, i) => {
                     return ( <div style={styles} key={e.id}>
                         <img style={heartStyles} src={'https://i.ebayimg.com/images/g/xwgAAOSwTRBZ0ReG/s-l1600.jpg'} onClick={() => this.onDelete(i)} />
