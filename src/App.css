@@ -1,11 +1,9 @@
-
-    
 .App {
   text-align: center;
-  background-image: url("https://media.giphy.com/media/xTiTni5EJQY4QftE7C/giphy.gif"); 
+  background-image: url("https://media.giphy.com/media/xTiTni5EJQY4QftE7C/giphy.gif");
 
-background-repeat: no-repeat;
-background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   height: 100vh;
   width: 100vw;
 }
@@ -40,17 +38,18 @@ background-size: 100% 100%;
   }
 }
 .mainStyles {
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: space-around;
-align-items: stretch;
-align-content: stretch;
-height: 95vh;
-overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: stretch;
+  height: 95vh;
+  overflow-y: scroll;
 }
 
 .headers {
- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
 }
